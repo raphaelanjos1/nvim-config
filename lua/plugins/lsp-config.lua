@@ -1,8 +1,8 @@
 return {
   {"williamboman/mason.nvim",
-  config = function()
-    require("mason").setup()
-  end},
+    config = function()
+      require("mason").setup()
+    end},
   {
     "williamboman/mason-lspconfig.nvim",
     config = function()
@@ -11,6 +11,13 @@ return {
           "lua_ls"
         }
       })
+    end
+  },
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      local lspconfig = require("lspconfig")
+      lspconfig.lua_ls.setup({})
     end
   }
 }
